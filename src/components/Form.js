@@ -3,6 +3,7 @@ import Header from './Header';
 import * as yup from 'yup';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
+import Styled from 'styled-components';
 
 export default function Form(){
 const [ formState, setformState ]= useState({
@@ -79,10 +80,22 @@ const formSubmit = (event) => {
 
    
 }
+const StyledForm = Styled.div`
+display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: crimson;
+  font-size: 30px;
+  width: 100%;
+  height: 100vh;
+  padding: 3%;
+`
 
     return(
         <div>
             <Header/>
+        <StyledForm>            
             <form onSubmit={formSubmit}>
                 <label htmlFor="customername">
                     Customer Name :
@@ -170,9 +183,8 @@ const formSubmit = (event) => {
                 <button type='submit' disabled={buttonDisabled}>Place the Order</button>
               
             </form>
-
+        </StyledForm>
         </div>
-
     )
 
 }
