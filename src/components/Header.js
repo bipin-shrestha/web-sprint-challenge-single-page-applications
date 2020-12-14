@@ -1,5 +1,6 @@
 import React from 'react';
 import Styled from 'styled-components';
+import {useHistory} from 'react-router-dom';
 
 const StyledHeader = Styled.div`
 font-size: 20px;
@@ -11,15 +12,15 @@ flex-direction: row;
 justify-content: space-between;
 `
 
-
 function Header() {
+    const history = useHistory();
     return  (   
         <div className='topheader'> 
         <StyledHeader>   
           <div><h2>LAMBDA EATS</h2></div>
                
             <div>
-            <button>HOME</button>
+            <button onClick={()=>history.push('/')}>HOME</button>
             <button>HELP</button>
             </div>
                     
