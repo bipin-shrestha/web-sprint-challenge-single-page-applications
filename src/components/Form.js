@@ -1,9 +1,18 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import * as yup from 'yup';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import Styled from 'styled-components';
+
+const StyledForm = Styled.div`
+display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: crimson;
+  font-size: 20px;
+  padding: 3%;
+`
 
 export default function Form(){
 const [ formState, setformState ]= useState({
@@ -61,7 +70,7 @@ const inputChange = (event) => {
         event.target.type === 'checkbox' ? event.target.checked  : event.target.value
     };
     validate(event);
-    console.log(errors);
+    console.log("this is the event", errors);
     setformState(newFormState);
 };
 const history = useHistory();
@@ -76,21 +85,9 @@ const formSubmit = (event) => {
             pathname: "/confirmation",
             state: {data: response.data}
         });
-    });
+    })       
+};
 
-   
-}
-const StyledForm = Styled.div`
-display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  background-color: crimson;
-  font-size: 30px;
-  width: 100%;
-  height: 100vh;
-  padding: 3%;
-`
 
     return(
         <div>
@@ -185,6 +182,6 @@ display: flex;
             </form>
         </StyledForm>
         </div>
-    )
+    );
 
-}
+};
