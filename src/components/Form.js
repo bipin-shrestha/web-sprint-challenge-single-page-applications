@@ -79,13 +79,16 @@ const formSubmit = (event) => {
     //console.log(formState);
     axios
     .post("https://reqres.in/api/users", formState)
-    .then((response) =>{
+    .then((response) => {
         console.log(response.data);
         history.push({
             pathname: "/confirmation",
             state: {data: response.data}
         });
-    })       
+    }) 
+    .catch((error) => {
+        console.log(error);
+    })      
 };
 
 

@@ -34,10 +34,10 @@ Demonstrate your understanding of this week's concepts by answering the followin
 -'useRouteMatch' hook is used add nested routes to our application so that we can change a single parameter in th Url without changing the whole application.  
 
 1. How would you explain form validation to someone who has never programmed before?
--  It is basically displaying the error message if the user didnot fill out correctly with the expected type of unit.
+-  It is basically checking if the user did fill out the form correctly.
 
 1. In 1-2 sentences, define end to end testing.
-- End to end testing helps to point out all the bugs that a user encounter when visiting our webpage.
+- End to end testing helps to point out all the bugs that a user encounter when visiting the webpage.
 
 ## Instructions
 
